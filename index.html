@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mi Página</title>
+    <title>Resonancia</title>
     <style>
         body {
             margin: 0;
@@ -23,8 +23,8 @@
             left: 10px;
             cursor: pointer;
             z-index: 2;
-            width: 20px; /* Ajusta el tamaño del ícono aquí */
-            height: 20px; /* Ajusta el tamaño del ícono aquí */
+            width: 30px; /* Ajusta el tamaño del ícono aquí */
+            height: 30px; /* Ajusta el tamaño del ícono aquí */
         }
 
         #text {
@@ -88,7 +88,7 @@
 </head>
 <body>
     <div id="icon">
-        <a href="statement"><img src="imagenes/logo.png" alt="Ícono"></a>
+        <a href="statement"><img src="imagenes/logo.png" alt="Ícono" width="20" height="20"></a>
     </div>
     <div id="text">
         <p>Lorem ipsum dolor sit amet,</p>
@@ -101,7 +101,7 @@
     </button>
 
     <div id="video-end" style="display: none;">
-        <p></p>
+        <p>¡Video finalizado!</p>
         <div class="redirect-buttons">
             <button class="redirect-button" onclick="redirectToPage1()"><i class="fas fa-home"></i>Ir a página 1</button>
             <button class="redirect-button" onclick="redirectToPage2()"><i class="fas fa-play-circle"></i>Ir a página 2</button>
@@ -115,7 +115,7 @@
         }
 
         function redirectToPage2() {
-            window.location.href = "pagina2.html";
+            window.location.href = "video.html";
         }
 
         function redirectToPage3() {
@@ -128,4 +128,3 @@
     </script>
 </body>
 </html>
-
