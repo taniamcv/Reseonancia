@@ -4,19 +4,7 @@
     <title>Resonancia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <style>
-        @media screen and (orientation: portrait) {
-        html, body {
-            overflow: hidden;
-        }
-            
         body {
-            transform: rotate(90deg);
-            transform-origin: left top;
-            width: 100vh;
-            height: 100vw;
-            position: absolute;
-            top: 100%;
-            left: 0;
             margin: 0;
             padding: 0;
             background: url(imagenes/fondo.jpg) no-repeat center center fixed; /* Cambia la ruta de la imagen de fondo */
@@ -96,6 +84,22 @@
 
         .redirect-button i {
             margin-right: 5px;
+        }
+
+        @media screen and (orientation: portrait) {
+            html, body {
+                overflow: hidden;
+            }
+
+            body {
+                transform: rotate(90deg);
+                transform-origin: left top;
+                width: 100vh;
+                height: 100vw;
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
         }
     </style>
 </head>
