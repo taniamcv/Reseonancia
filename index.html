@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Página</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(imagenes/fondo.jpg) no-repeat center center fixed; /* Cambia la ruta de la imagen de fondo */
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Verdana, sans-serif;
+            color: white;
+        }
+
+        #icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            z-index: 2;
+            width: 20px; /* Ajusta el tamaño del ícono aquí */
+            height: 20px; /* Ajusta el tamaño del ícono aquí */
+        }
+
+        #text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 14px;
+            font-family: Verdana, sans-serif;
+            color: white;
+            display: flex; /* Agregado */
+            flex-direction: column; /* Agregado */
+            gap: 10px; /* Agregado */
+        }
+
+        #text p {
+            margin: 0; /* Agregado */
+        }
+
+        #play-button {
+            background-color: white; /* Cambiado a blanco */
+            border: none;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            color: white;
+            font-size: 36px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #play-button:hover {
+            background-color: purple;
+        }
+
+        .redirect-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .redirect-button {
+            background-color: #555;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .redirect-button:hover {
+            background-color: purple;
+        }
+
+        .redirect-button i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="icon">
+        <a href="statement"><img src="imagenes/logo.png" alt="Ícono"></a>
+    </div>
+    <div id="text">
+        <p>Lorem ipsum dolor sit amet,</p>
+        <p>consectetur adipiscing elit.</p>
+    </div>
+    <button id="play-button" onclick="redirectToVideoPage()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+            <path d="M3 22v-20l18 10-18 10z"/>
+        </svg>
+    </button>
+
+    <div id="video-end" style="display: none;">
+        <p>¡Video finalizado!</p>
+        <div class="redirect-buttons">
+            <button class="redirect-button" onclick="redirectToPage1()"><i class="fas fa-home"></i>Ir a página 1</button>
+            <button class="redirect-button" onclick="redirectToPage2()"><i class="fas fa-play-circle"></i>Ir a página 2</button>
+            <button class="redirect-button" onclick="redirectToPage3()"><i class="fas fa-info-circle"></i>Ir a página 3</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToPage1() {
+            window.location.href = "pagina1.html";
+        }
+
+        function redirectToPage2() {
+            window.location.href = "pagina2.html";
+        }
+
+        function redirectToPage3() {
+            window.location.href = "pagina3.html";
+        }
+
+        function redirectToVideoPage() {
+            window.location.href = "pagina2.html";
+        }
+    </script>
+</body>
+</html>
+            <path d="M3 22v-20l18 10-18 10z"/>
+        </svg>
+    </button>
+
+    <div id="video-end" style="display: none;">
+        <p>¡Video finalizado!</p>
+        <div class="redirect-buttons">
+            <button class="redirect-button" onclick="redirectToPage1()"><i class="fas fa-home"></i>Ir a página 1</button>
+            <button class="redirect-button" onclick="redirectToPage2()"><i class="fas fa-play-circle"></i>Ir a página 2</button>
+            <button class="redirect-button" onclick="redirectToPage3()"><i class="fas fa-info-circle"></i>Ir a página 3</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToPage1() {
+            window.location.href = "pagina1.html";
+        }
+
+        function redirectToPage2() {
+            window.location.href = "video.html";
+        }
+
+        function redirectToPage3() {
+            window.location.href = "pagina3.html";
+        }
+
+        function redirectToVideoPage() {
+            window.location.href = "pagina2.html";
+        }
+    </script>
+</body>
+</html>
