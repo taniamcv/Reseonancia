@@ -3,6 +3,7 @@
 <head>
     <title>Resonancia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <style>
         body {
@@ -174,9 +175,16 @@
             <span class="tooltiptext">Enviar comentarios</span>
         </button>
     </div>
+    
+    <!-- Botón 3 -->
+    <div class="tooltip" style="position: absolute; top: 130px; right: 10px;">
+        <button class="redirect-button small" style="background-color: transparent;" onclick="redirectToAbout()">
+            <i class="fas fa-user-friends"></i>
+            <span class="tooltiptext">Conócenos</span>
+        </button>
+    </div>
 
     <script>
-
         function redirectToPage2() {
             window.location.href = "video.html";
         }
@@ -191,6 +199,10 @@
 
         function redirectToComments() {
             window.location.href = "comentarios.html";
+        }
+
+        function redirectToAbout() {
+            window.location.href = "nosotros.html";
         }
     </script>
 </body>
