@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: url(imagenes/fondo.jpg) no-repeat center center fixed; /* Cambia la ruta de la imagen de fondo */
+            background: url(imagenes/fondo) no-repeat center center fixed; /* Cambia la ruta de la imagen de fondo */
             background-size: cover;
             display: flex;
             align-items: center;
@@ -87,6 +87,40 @@
             margin-right: 5px;
         }
 
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 0.7;
+            font-size: 12px;
+        }
+
+        .redirect-button.small {
+            font-size: 20px;
+        }
+
+        .redirect-button.small:hover {
+            background-color: purple;
+        }
+
         @media screen and (orientation: portrait) {
             html, body {
                 overflow: hidden;
@@ -106,7 +140,7 @@
 </head>
 <body>
     <div id="icon">
-        <a href="statement.html"><img src="imagenes/logo.png" alt="Ícono" width="50" height="50"></a>
+        <a href="statement"><img src="imagenes/logo.png" alt="Ícono" width="50" height="50"></a>
     </div>
     <div id="text">
         <p>Lorem ipsum dolor sit amet,</p>
@@ -117,7 +151,7 @@
     </button>
 
     <div id="video-end" style="display: none;">
-        <p>¡Video finalizado!</p>
+        <p></p>
         <div class="redirect-buttons">
             <button class="redirect-button" onclick="redirectToPage1()"><i class="fas fa-home"></i>Ir a página 1</button>
             <button class="redirect-button" onclick="redirectToPage2()"><i class="fas fa-play-circle"></i>Ir a página 2</button>
@@ -125,21 +159,38 @@
         </div>
     </div>
 
+    <!-- Botón 1 -->
+    <div class="tooltip" style="position: absolute; top: 10px; right: 10px;">
+        <button class="redirect-button small" style="background-color: transparent;" onclick="redirectToGallery()">
+            <i class="fas fa-image"></i>
+            <span class="tooltiptext">Ver galería</span>
+        </button>
+    </div>
+
+    <!-- Botón 2 -->
+    <div class="tooltip" style="position: absolute; top: 70px; right: 10px;">
+        <button class="redirect-button small" style="background-color: transparent;" onclick="redirectToComments()">
+            <i class="fas fa-comment"></i>
+            <span class="tooltiptext">Enviar comentarios</span>
+        </button>
+    </div>
+
     <script>
-        function redirectToPage1() {
-            window.location.href = "pagina1.html";
-        }
 
         function redirectToPage2() {
             window.location.href = "video.html";
         }
 
-        function redirectToPage3() {
-            window.location.href = "pagina3.html";
-        }
-
         function redirectToVideoPage() {
             window.location.href = "video.html";
+        }
+
+        function redirectToGallery() {
+            window.location.href = "galeria.html";
+        }
+
+        function redirectToComments() {
+            window.location.href = "comentarios.html";
         }
     </script>
 </body>
