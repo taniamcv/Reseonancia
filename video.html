@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(ruta/imagen-fondo.jpg) no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+        }
+
+        #video-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .plyr__video-embed {
+            width: 100%;
+            height: 100%;
+        }
+
+        .redirect-button {
+            background-color: #555;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            display: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 2;
+        }
+
+        .redirect-button:hover {
+            background-color: purple;
+        }
+
+        .redirect-button i {
+            margin-right: 0;
+        }
+
+        #close-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            display: block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 2;
+        }
+
+        #close-button:hover {
+            background-color: purple;
+        }
+
+        #close-button i {
+            margin-right: 0;
+        }
+
+        #video-end {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-align: center;
+        }
+
+        #replay-button {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-player">
+        <div class="plyr__video-embed" id="player">
+            <iframe src="https://www.youtube.com/embed/Kq0YAetXv9Q?autoplay=1" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div id="video-end">
+        <p></p>
+        <button class="redirect-button" id="replay-button" onclick="replayVideo()"><i class="fas fa-redo"></i></button>
+    </div>
+
+    <button class="redirect-button" id="close-button" onclick="redirectToPage5()"><i class="fas fa-times"></i></button>
+
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        var videoPlayer = document.getElementById("video-player");
+        var videoEnd = document.getElementById("video-end");
+        var replayButton = document.getElementById("replay-button");
+        var closeButton = document.getElementById("close-button");
+        var player;
+
+        if (!player) {
+            player = new Plyr('#player', {
+                controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+            });
+
+            player.on('ended', function() {
+                videoPlayer.style.display = "none";
+                videoEnd.style.display = "block";
+                replayButton.style.display = "block";
+            });
+        }
+
+        function replayVideo() {
+            videoPlayer.style.display = "block";
+            videoEnd.style.display = "none";
+            replayButton.style.display = "none";
+            player.play();
+        }
+
+        function redirectToPage5() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
