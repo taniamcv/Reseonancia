@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Resonancia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <style>
         body {
             margin: 0;
@@ -44,7 +45,7 @@
         }
 
         #play-button {
-            background-color: rgba(255, 255, 255, 0)
+            background-color: rgba(255, 255, 255, 0);
             border: none;
             border-radius: 50%;
             width: 100px;
@@ -66,15 +67,15 @@
         }
 
         .redirect-button {
-        background-color: transparent; /* Cambiado a transparente */
-        border: none;
-        border-radius: 5px;
-        color: white;
-        font-size: 18px;
-        padding: 10px 20px;
-        margin-right: 10px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+            background-color: transparent; /* Cambiado a transparente */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .redirect-button:hover {
@@ -95,9 +96,7 @@
         <p>consectetur adipiscing elit.</p>
     </div>
     <button id="play-button" onclick="redirectToVideoPage()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
-            <path d="M3 22v-20l18 10-18 10z"/>
-        </svg>
+        <i class="fas fa-play" style="color: white;"></i>
     </button>
 
     <div id="video-end" style="display: none;">
