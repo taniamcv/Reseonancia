@@ -2,14 +2,26 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Mi Página</title>
+  <title>Resonancia</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico">
   <style>
     body {
-      background-image: url('https://www.pcclean.io/wp-content/uploads/2020/4/ZB3uqq.jpg');
+      background-image: url('imagenes/fondo.jpg');
       background-size: cover;
       color: white;
       font-family: Verdana, sans-serif;
     }
+	  
+	  #icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            z-index: 2;
+            width: 50px;
+            height: 50px;
+        }
 
     #container {
       max-width: 800px;
@@ -30,9 +42,87 @@
       display: block;
       margin: 20px auto;
     }
+	  
+	.redirect-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .redirect-button {
+            background-color: transparent;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .redirect-button:hover {
+            background-color: purple;
+        }
+
+        .redirect-button i {
+            margin-right: 5px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 0.7;
+            font-size: 12px;
+        }
+
+        .redirect-button.small {
+            font-size: 20px;
+        }
+
+        .redirect-button.small:hover {
+            background-color: purple;
+        }
+
+        @media screen and (orientation: portrait) {
+            html, body {
+                overflow: hidden;
+            }
+
+            body {
+                transform: rotate(90deg);
+                transform-origin: left top;
+                width: 100vh;
+                height: 100vw;
+                position: absolute;
+                top: 100%;
+                left: 0;
+		}
   </style>
 </head>
 <body>
+	<div id="icon">
+        <a href="index.html"><img src="imagenes/logo.png" alt="Ícono" width="50" height="50"></a>
+    </div>
   <div id="container">
     <h1>Resonancia</h1>
     <h2>Statement de la obra</h2>
@@ -48,5 +138,42 @@
     <h3>Parte estética</h3>
     <p style="text-align: justify;">El registro videográfico se centra en mostrar las reacciones de nuestros compañeros mientras reciben y leen la carta. Dentro de la página web están incluidos la descripción breve de la obra, el video de la entrega de cartas, y con fotografías de algunas cartas que son evidencia del trabajo creativo de los participantes de la actividad.</p>
   </div>
+<div class="tooltip" style="position: absolute; top: 10px; right: 10px;">
+        <button class="redirect-button small" style="background-color: transparent;" onclick="redirectToGallery()">
+            <i class="fas fa-image"></i>
+            <span class="tooltiptext">Ver galería</span>
+        </button>
+    </div>
+
+    <!-- Botón 2 -->
+    <div class="tooltip" style="position: absolute; top: 70px; right: 10px;">
+        <button class="redirect-button small" style="background-color: transparent;" onclick="redirectToComments()">
+            <i class="fas fa-comment"></i>
+            <span class="tooltiptext">Enviar comentarios</span>
+        </button>
+    </div>
+    
+    <!-- Botón 3 -->
+    <div class="tooltip" style="position: absolute; top: 130px; right: 10px;">
+        <button class="redirect-button small" style="background-color: transparent;" onclick="redirectToAbout()">
+            <i class="fas fa-user-friends"></i>
+            <span class="tooltiptext">Conócenos</span>
+        </button>
+    </div>
+
+    <script>
+
+        function redirectToGallery() {
+            window.location.href = "galeria.html";
+        }
+
+        function redirectToComments() {
+            window.location.href = "comentarios.html";
+        }
+
+        function redirectToAbout() {
+            window.location.href = "nosotros.html";
+        }
+	</script>
 </body>
 </html>
