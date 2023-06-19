@@ -10,6 +10,16 @@
       font-family: Verdana, sans-serif;
     }
     
+    #icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            z-index: 2;
+            width: 50px;
+            height: 50px;
+        }
+    
     h1 {
       text-align: center;
       color: white;
@@ -37,16 +47,95 @@
     
     .person h2 {
       margin: 0;
-      color: #333333;
+      color: #000000;
     }
     
     .person p {
       margin: 0;
-      color: #666666;
+      color: #000000;
     }
+    
+     .redirect-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .redirect-button {
+            background-color: transparent;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .redirect-button:hover {
+            background-color: purple;
+        }
+
+        .redirect-button i {
+            margin-right: 5px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 0.7;
+            font-size: 12px;
+        }
+
+        .redirect-button.small {
+            font-size: 20px;
+        }
+
+        .redirect-button.small:hover {
+            background-color: purple;
+        }
+
+        @media screen and (orientation: portrait) {
+            html, body {
+                overflow: hidden;
+            }
+
+            body {
+                transform: rotate(90deg);
+                transform-origin: left top;
+                width: 100vh;
+                height: 100vw;
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+        }
   </style>
 </head>
 <body>
+   <div id="icon">
+        <a href="statement"><img src="imagenes/logo.png" alt="Ícono" width="50" height="50"></a>
+    </div>
   <h1>Conócenos</h1>
   
   <div class="container">
@@ -77,5 +166,54 @@
       <p>Como una persona que nunca creyó que podría dedicarse al arte, se empeña en hacerlo una posibilidad accesible para todos. Cree que cada individuo tiene una capacidad creativa única y valiosa.</p>
     </div>
   </div>
+  <div class="redirect-buttons">
+            <button class="redirect-button" onclick="redirectToPage1()"><i class="fas fa-home"></i>Ir a página 1</button>
+            <button class="redirect-button" onclick="redirectToPage2()"><i class="fas fa-play-circle"></i>Ir a página 2</button>
+            <button class="redirect-button" onclick="redirectToPage3()"><i class="fas fa-info-circle"></i>Ir a página 3</button>
+     <!-- Botón 1 -->
+    <div class="tooltip" style="position: absolute; top: 10px; right: 10px;">
+        <button class="redirect-button small" style="background-color: transparent;" onclick="redirectToGallery()">
+            <i class="fas fa-image"></i>
+            <span class="tooltiptext">Ver galería</span>
+        </button>
+    </div>
+
+    <!-- Botón 2 -->
+    <div class="tooltip" style="position: absolute; top: 70px; right: 10px;">
+        <button class="redirect-button small" style="background-color: transparent;" onclick="redirectToComments()">
+            <i class="fas fa-comment"></i>
+            <span class="tooltiptext">Enviar comentarios</span>
+        </button>
+    </div>
+    
+    <!-- Botón 3 -->
+    <div class="tooltip" style="position: absolute; top: 130px; right: 10px;">
+        <button class="redirect-button small" style="background-color: transparent;" onclick="redirectToAbout()">
+            <i class="fas fa-user-friends"></i>
+            <span class="tooltiptext">Conócenos</span>
+        </button>
+    </div>
+
+    <script>
+        function redirectToPage2() {
+            window.location.href = "video.html";
+        }
+
+        function redirectToVideoPage() {
+            window.location.href = "video.html";
+        }
+
+        function redirectToGallery() {
+            window.location.href = "galeria.html";
+        }
+
+        function redirectToComments() {
+            window.location.href = "comentarios.html";
+        }
+
+        function redirectToAbout() {
+            window.location.href = "nosotros.html";
+        }
+    </script>
 </body>
 </html>
